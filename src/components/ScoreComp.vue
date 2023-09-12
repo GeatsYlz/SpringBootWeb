@@ -101,7 +101,7 @@ export default {
 
     getScoreList() {
       axios
-        .get("http://localhost:8201/score")
+        .get("http://localhost:9090/score")
         .then((res) => {
           console.log(res.data);
           this.scores = res.data;
@@ -114,7 +114,7 @@ export default {
     handleRowDelete(row) {
       console.log(row);
       axios
-        .delete("http://localhost:8201/deletescore", { data: { id: row.id } })
+        .delete("http://localhost:9090/deletescore", { data: { id: row.id } })
         .then((res) => {
           console.log(res.data);
           // 如果删除成功，从数组中删除该学生
@@ -141,7 +141,7 @@ export default {
     handleRowUpdate(row) {
       console.log(row);
       axios
-        .put("http://localhost:8201/updatescore", row)
+        .put("http://localhost:9090/updatescore", row)
         .then((res) => {
           console.log(res.data);
           row.isEdit = false;
@@ -154,7 +154,7 @@ export default {
     handleRowInsert(row) {
       console.log(row);
       axios
-        .post("http://localhost:8201/addscore", row)
+        .post("http://localhost:9090/addscore", row)
         .then((res) => {
           console.log(res.data);
           row.isEdit = false;

@@ -105,7 +105,7 @@ export default {
 
     getCourseList() {
       axios({
-        url: "http://localhost:8201/course",
+        url: "http://localhost:9090/course",
         method: "GET",
         // eslint-disable-next-line no-unused-vars
       }).then((res) => {
@@ -117,7 +117,7 @@ export default {
       var item = this.courses[index];
       console.log(item);
       axios({
-        url: "http://localhost:8201/deletecourse",
+        url: "http://localhost:9090/deletecourse",
         method: "DELETE",
         data: {
           id: item.id,
@@ -146,7 +146,7 @@ export default {
     handleRowUpdate(row) {
       console.log(row);
       axios({
-        url: "http://localhost:8201/updatecourse",
+        url: "http://localhost:9090/updatecourse",
         method: "PUT",
         data: {
           id: row.id,
@@ -165,7 +165,7 @@ export default {
       // 如何区分是新数据还是旧数据 ?
       console.log(row);
       axios({
-        url: "http://localhost:8201/addcourse",
+        url: "http://localhost:9090/addcourse",
         method: "POST",
         data: {
           id: row.id,

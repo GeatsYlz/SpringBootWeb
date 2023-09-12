@@ -19,7 +19,7 @@ export default {
   methods: {
     fetchBarChartDataAndDrawChart() {
       axios
-        .get("http://localhost:8201/student") // 替换为第一个图表的数据API地址
+        .get("http://localhost:9090/student") // 替换为第一个图表的数据API地址
         .then((response) => {
           const dataset = response.data;
           this.drawBarChart(dataset);
@@ -30,7 +30,7 @@ export default {
     },
     fetchPieChartDataAndDrawChart() {
       axios
-        .get("http://localhost:8201/course") // 替换为第二个图表的数据API地址
+        .get("http://localhost:9090/course") // 替换为第二个图表的数据API地址
         .then((response) => {
           const dataset = response.data;
           this.drawPieChart(dataset);
